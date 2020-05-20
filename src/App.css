@@ -1,0 +1,46 @@
+.app-wrapper{
+  display: grid;
+  margin-left: auto ;
+  margin-right: auto;
+  width: 85%;
+  padding: 10px;
+
+  grid-template-areas: 
+    "header header"
+    "navbar content";
+    grid-template-rows: 60px 2fr;
+    grid-template-columns: 20% 80%;
+    grid-gap: 10px;
+}
+
+.header{
+  grid-area: header;
+  background-color: gray;
+  border-radius: 10px;
+}
+
+.header img{
+  width: 50px;
+  padding: 5px;
+}
+
+.content{
+  grid-area: content;
+  background-color: azure;
+  border-radius: 10px;
+}
+
+.navbar{
+ grid-area: navbar;
+ background-color: antiquewhite;
+ border-radius: 10px;
+ text-align: center;
+ 
+ }
+
+
+
+.lending{
+  width: 100%;
+  border-radius:10px 10px 0px 0px;
+}

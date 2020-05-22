@@ -1,0 +1,11 @@
+.content{
+    grid-area: content;
+    background-color: rgba(240, 240, 240, 0.726);
+    border: 3px solid rgba(95, 136, 197, 0.884);
+    border-radius: 10px;
+  }
+  
+.lending{
+    width: 100%;
+    border-radius: 7px 7px 0px 0px;
+  }

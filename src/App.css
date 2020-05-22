@@ -13,34 +13,5 @@
     grid-gap: 10px;
 }
 
-.header{
-  grid-area: header;
-  background-color: gray;
-  border-radius: 10px;
-}
-
-.header img{
-  width: 50px;
-  padding: 5px;
-}
-
-.content{
-  grid-area: content;
-  background-color: azure;
-  border-radius: 10px;
-}
-
-.navbar{
- grid-area: navbar;
- background-color: antiquewhite;
- border-radius: 10px;
- text-align: center;
- 
- }
 
 
-
-.lending{
-  width: 100%;
-  border-radius:10px 10px 0px 0px;
-}

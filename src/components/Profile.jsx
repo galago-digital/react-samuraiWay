@@ -1,10 +1,11 @@
 import React from 'react';
+import classes from './Profile.module.css';
 
 const Profile = () => {
     return (
-        <div className="content">
+        <div className={classes.content}>
             <div>
-                <img className = "lending" src="https://jssors8.azureedge.net/demos/image-slider/img/faded-monaco-scenery-evening-dark-picjumbo-com-image.jpg" />
+                <img className = {classes.lending} src="https://jssors8.azureedge.net/demos/image-slider/img/faded-monaco-scenery-evening-dark-picjumbo-com-image.jpg" />
             </div>
             <div>
                 ava + description
@@ -12,10 +13,10 @@ const Profile = () => {
             <div>
                 my posts
                 <div>
-                            new post
+                    new post
                 </div>
-                        <div>
-                            posts
+                <div>
+                    posts
                 </div>
             </div>
         </div>

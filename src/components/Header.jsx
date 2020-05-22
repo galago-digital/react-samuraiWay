@@ -1,9 +1,11 @@
 import React from 'react';
+import classes from'./Header.module.css';
 
-const Header = () =>{
-return (
-<header className="header">
-        <img src="https://img.icons8.com/ios-filled/2x/dot-logo.png"></img>
-</header>
-)}
+const Header = () => {
+        return (
+                <header className={classes.header}>
+                        <img className={classes.logo} src="/img/LogoFly.png"></img>
+                </header>
+        )
+}
 export default Header

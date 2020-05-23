@@ -1,12 +1,24 @@
 .header{
         grid-area: header;
         background-color: rgba(240, 240, 240, 0.726);
-        border: 3px solid rgba(95, 136, 197, 0.884);
+        border: 1px solid rgba(95, 136, 197, 0.884);
         border-radius: 5px;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+        
 }
       
 .logo{
         width: 60px;
         border-radius: 50%;
-        padding-top: -15px;
+        padding-left: 10px;
+}
+
+.firstName{
+        font-size: 30px;
+        color: rgba(31, 100, 204, 0.877);
+        top: 30px;
+}
+.lastName{
+        font-size: 21px;
+        color: rgb(182, 181, 181);
 }

@@ -5,8 +5,15 @@
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+  padding: 15px;
+  line-height: 1.7;
 }
-.item{
-  color: rgb(50, 155, 187);
+.item a{
+  color: rgb(182, 181, 181);
+  font-size: 18px;
+  text-decoration: none;
+}
+.item a.activeLink{
+  color: rgba(31, 100, 204, 0.877);
   font-size: 18px;
 }

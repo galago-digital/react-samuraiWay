@@ -1,0 +1,30 @@
+.dialogPage{
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+
+}
+.dialogsMenu{
+    padding: 10px;
+
+}
+.dialog a{
+    color: rgb(182, 181, 181);
+    text-decoration: none;
+    line-height: 2;
+
+}
+.dialog a.activeLink{
+    color: rgba(31, 100, 204, 0.877);
+    font-size: 20px;
+
+}
+.messages{
+    padding: 10px;
+    background-color: white;
+    border-radius: 0px 10px 0px 0px;
+    border-color: rgba(95, 136, 197, 0.884);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+}
+.message{
+
+}

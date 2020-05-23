@@ -5,7 +5,9 @@
     width: 85%;
     padding: 10px;
 
-    grid-template-areas: "header header" "navbar content";
+    grid-template-areas:
+            "header header"
+            "navbar content";
     grid-template-rows: 70px 2fr;
     grid-template-columns: 150px auto;
     grid-gap: 10px;

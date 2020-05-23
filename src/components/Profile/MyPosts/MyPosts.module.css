@@ -1,3 +1,6 @@
 .postPanel{
-  padding-left: 10px;
+  padding:10px;
+}
+.post{
+  margin-top: 10px;
 }

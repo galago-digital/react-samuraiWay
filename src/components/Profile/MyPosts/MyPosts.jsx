@@ -4,6 +4,16 @@ import classes from './MyPosts.module.css';
 
 
 const MyPosts = () => {
+    let posts = [
+        {id: 1, message: "hi? How are you?", likesCount:15},
+        {id: 2, message: "ololololol", likesCount:10},
+        {id: 3, message: "norm", likesCount:5},
+        {id: 4, message: "chivo", likesCount:2},
+    ]
+
+    let postsElement = posts
+        .map(p =><Post message={p.message} likeCount={p.likesCount}/>)
+
     return (
         <div className={classes.postPanel}>
             <h3>My posts</h3>
@@ -16,8 +26,7 @@ const MyPosts = () => {
                 </div>
             </div>
             <div className={classes.post}>
-                <Post message="hi? How are you?" likeCount="15"/>
-                <Post message="My first post" likeCount="25"/>
+                {postsElement}
             </div>
         </div>
 

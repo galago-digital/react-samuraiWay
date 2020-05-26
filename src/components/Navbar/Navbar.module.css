@@ -7,6 +7,9 @@
   box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
   padding: 15px;
   line-height: 1.7;
+
+  margin-top: 90px;
+  position: fixed;
 }
 .item a{
   color: rgb(182, 181, 181);
@@ -16,4 +19,33 @@
 .item a.activeLink{
   color: rgba(31, 100, 204, 0.877);
   font-size: 18px;
+}
+.friends{
+  padding-top: 40px;
+  font-size: 25px;
+}
+.friendsCard{
+  font-size: 15px;
+  background-color: white;
+  border-radius: 30px;
+  height: 40px;
+  border: 2px dotted rgba(31, 100, 204, 0.877);;;
+  margin: 5px;
+  width: 120px;
+  position: relative;
+
+
+
+}
+.friendsCard img{
+  width: 40px;
+  border-radius: 100%;
+  position: absolute;
+  left: 0px;
+}
+.friendsCard span{
+  position: absolute;
+  top: 5px;
+  font-size: 17px;
+  color: rgb(182, 181, 181);
 }

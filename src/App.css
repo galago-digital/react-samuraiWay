@@ -10,7 +10,7 @@
             "navbar content";
     grid-template-rows: 70px 2fr;
     grid-template-columns: 150px auto;
-    grid-gap: 10px;
+    grid-gap: 20px;
 }
 
 .app-wrapper-content {

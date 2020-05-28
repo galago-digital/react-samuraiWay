@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './Navbar.module.css';
 import {NavLink} from "react-router-dom";
 import FriendsBar from "./FriendsBar/FriendsBar";
-
+//навбар, принимающий пропсы, рендерит страницы по ссылкам
 const Navbar = (props) => {
 
     return (

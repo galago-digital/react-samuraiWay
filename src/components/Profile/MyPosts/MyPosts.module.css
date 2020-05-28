@@ -4,3 +4,21 @@
 .post{
   margin-top: 10px;
 }
+.posttext{
+  width: 99%;
+  resize: vertical;
+  background: white;
+  outline: none;
+  border-width: 0px 0px 2px 0px;
+  border-color: rgba(31, 100, 204, 0.877);
+  height: 60px;
+}
+.addPostButton{
+  width: 120px;
+  height: 40px;
+  border: none;
+  border-radius: 30px;
+  background-color: rgb(52, 102, 201);
+  color: white;
+  outline: none;
+}

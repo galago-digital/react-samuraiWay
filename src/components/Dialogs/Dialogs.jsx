@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./Dialogs.module.css";
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
-import {addMessageCreator, updateNewMessageCreator} from "../../redux/state";
+import {addMessageCreator, updateNewMessageCreator} from "../../redux/dialogsReducer";
 
 const Dialogs = (props) => {
     let dialogsElements = props.state.dialogs
@@ -14,6 +14,7 @@ let addMessage = () => {
     props.dispatch(addMessageCreator())
 }
 let onMessageChange = (e) =>{
+    debugger
     let text = e.target.value
     props.dispatch(updateNewMessageCreator(text))
 }

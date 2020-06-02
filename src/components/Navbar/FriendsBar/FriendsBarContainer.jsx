@@ -1,21 +1,13 @@
 import React from 'react';
-import classes from './../Navbar.module.css';
-import FriendsBarItem from "./FriendsBarItem/FriendsBarItem";
 import FriendsBar from "./FriendsBar";
-import StoreContext from "../../../StoreContext";
+import {connect} from "react-redux";
 
-const FriendsBarContainer = (props) => {
-    return (
-        <StoreContext.Consumer>
-            {store => {
-                let state = store.getState().sidebar
-                return (
-                    <FriendsBar sidebar={state}/>
-                )
-            }
-            }
-        </StoreContext.Consumer>
-    )
+
+let mapStateToProps = (state) => {
+    return{
+        sidebar: state.sidebar
+    }
 }
+const FriendsBarContainer = connect(mapStateToProps)(FriendsBar)
 
 export default FriendsBarContainer;

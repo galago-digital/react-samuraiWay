@@ -2,6 +2,7 @@ import React from 'react';
 import {addPostActionCreator, updateNewPostActionCreator} from "../../../redux/profileReducer";
 import MyPosts from "./MyPosts";
 import {connect} from "react-redux";
+import MyPostsC from "./MyPostsC";
 
 let mapStateToProps = (state)=>{
     return{

@@ -1,9 +1,8 @@
 import React from 'react';
 import classes from './Navbar.module.css';
 import {NavLink} from "react-router-dom";
-import FriendsBar from "./FriendsBar/FriendsBar";
 import FriendsBarContainer from "./FriendsBar/FriendsBarContainer";
-//навбар, принимающий пропсы, рендерит страницы по ссылкам
+
 const Navbar = (props) => {
 
     return (
@@ -19,6 +18,9 @@ const Navbar = (props) => {
             </div>
             <div className={classes.item}>
                 <NavLink to="/music" activeClassName={classes.activeLink}>Music</NavLink>
+            </div>
+            <div className={classes.item}>
+                <NavLink to="/users" activeClassName={classes.activeLink}>Users</NavLink>
             </div>
             <div className={classes.item}>
                 <NavLink to="/settings" activeClassName={classes.activeLink}>Settings</NavLink>

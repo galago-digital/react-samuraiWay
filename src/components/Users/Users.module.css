@@ -1,0 +1,54 @@
+.usersPage{
+    padding: 5px;
+}
+.userCard{
+    display: grid;
+    grid-template-columns: 100px auto;
+    border: 3px solid rgba(95, 136, 197, 0.884);
+    border-radius: 9px;
+    margin-bottom: 10px;
+}
+.avaSubmit{
+    background-color: rgb(52, 102, 201);
+    border-radius: 9px 0px 0px 9px;
+}
+.avaSubmit img{
+    width: 100px;
+    border-radius: 7px 0px 0px 0px;
+
+}
+.avaSubmit button{
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 0px 0px 0px 7px;
+    background-color: rgb(52, 102, 201);
+    color: white;
+    outline: none;
+}
+.userData{
+    background-color: rgba(240, 240, 240, 0.726);
+    border-left: 2px solid rgba(95, 136, 197, 0.884);;
+    padding: 10px;
+    border-radius: 0px 7px 7px 0px;
+}
+.userNameStatus{
+    width: 80%;
+    float: left;
+}
+.userName{
+    font-size: 25px;
+}
+.userStatus{
+    font-size: 15px;
+    margin-top: 30px;
+}
+.userLocation{
+    width: 20%;
+    min-width: 60px;
+    float: right;
+}
+.selectPage{
+
+    font-weight: bold;
+}

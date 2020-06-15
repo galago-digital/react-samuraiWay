@@ -2,6 +2,7 @@ import React from "react";
 import {addMessageCreator, updateNewMessageCreator} from "../../redux/dialogsReducer";
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
+import DialogsC from "./DialogsC";
 
 let mapStateToProps = (state) => {
     return {

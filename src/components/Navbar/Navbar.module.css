@@ -29,13 +29,10 @@
   background-color: white;
   border-radius: 30px;
   height: 40px;
-  border: 2px dotted rgba(31, 100, 204, 0.877);;;
+  border: 2px dotted rgba(31, 100, 204, 0.877);
   margin: 5px;
   width: 120px;
   position: relative;
-
-
-
 }
 .friendsCard img{
   width: 40px;

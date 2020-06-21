@@ -1,7 +1,12 @@
 import React from 'react';
 import classes from './ProfileInfo.module.css';
+import Preloader from "../../Common/Preloader/Preloader";
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+    if(!props.profile){
+        return <Preloader/>
+    }
+
     return (
         <div>
             <div>
@@ -9,7 +14,10 @@ const ProfileInfo = () => {
                      src="https://jssors8.azureedge.net/demos/image-slider/img/faded-monaco-scenery-evening-dark-picjumbo-com-image.jpg"/>
             </div>
             <div className={classes.description}>
-                ava + description
+                <img src={props.profile.photos.large} />
+            </div>
+            <div>
+                {props.profile.fullName}
             </div>
 
         </div>

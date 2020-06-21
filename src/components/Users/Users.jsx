@@ -1,13 +1,16 @@
 import React from "react";
 import classes from "./Users.module.css";
 import userPhoto from "../../assets/images/no-img-avatar.png";
+import {NavLink} from "react-router-dom";
+import * as axios from "axios";
+import {follow, usersAPI} from "../../api/api";
 
 
 let Users = (props) => {
-    let pagesCount = Math.ceil(props.totalUsersCount/props.pageSize)
+    let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
 
     let pages = [];
-    for (let i =1; i <= 5;i++) {
+    for (let i = 1; i <= 5; i++) {
         pages.push(i)
     }
     return (
@@ -27,15 +30,29 @@ let Users = (props) => {
                 <div className={classes.userCard}>
                     <div className={classes.avaSubmit}>
                         <div>
-                            <img src={u.photos.small != null ? u.photos.small : userPhoto} alt=""
-                                 className={classes.avatar}/>
+                            <NavLink to={'/profile/' + u.id}>
+                                <img src={u.photos.small != null ? u.photos.small : userPhoto} alt=""
+                                     className={classes.avatar}/>
+                            </NavLink>
                         </div>
                         <div>
-                            {u.followed ? <button onClick={() => {
-                                props.unfollow(u.id)
-                            }}>Unfollow</button> : <button onClick={() => {
-                                props.follow(u.id)
-                            }}>Follow</button>}
+                            {u.followed
+                                ? <button onClick={() => {
+                                    usersAPI.unfollow(u.id)
+                                        .then(data => {
+                                            if (data.resultCode === 0) {
+                                                props.unfollow(u.id)
+                                            }
+                                        })
+                                }}>Unfollow</button>
+                                : <button onClick={() => {
+                                    usersAPI.follow(u.id)
+                                        .then(data => {
+                                            if (data.resultCode === 0) {
+                                                props.follow(u.id)
+                                            }
+                                        })
+                                }}>Follow</button>}
                         </div>
                     </div>
                     <div className={classes.userData}>

@@ -45,15 +45,14 @@ class App extends React.Component {
                            render={() => <LoginPage/>}/>
                 </div>
             </div>
-
         );
     }
 }
 
-const mapStateToProps = (state) =>({
+const mapStateToProps = (state) => ({
     initialized: state.app.initialized
 })
 
 export default compose(
     withRouter,
-    connect(mapStateToProps, {initializeApp})) (App)
+    connect(mapStateToProps, {initializeApp}))(App)

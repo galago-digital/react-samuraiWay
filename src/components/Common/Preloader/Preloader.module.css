@@ -3,3 +3,11 @@
     left: 50%;
     top: 50%;
 }
+.bgFon {
+    background-color: rgba(0, 0, 0, 0.11);
+    height:100%;
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+}

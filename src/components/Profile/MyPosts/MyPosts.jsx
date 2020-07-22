@@ -20,8 +20,10 @@ const MyPostForm = (props) => {
     )
 }
 const MyPostFormRedux = reduxForm({form: 'myPostAddMessageForm'})(MyPostForm)
-const MyPosts = (props) => {
-    let postsElement = props.posts
+
+const MyPosts = React.memo(props => {
+    let postsElement = [...props.posts]
+        .reverse()
         .map(p => <Post message={p.message} key={p.id} likeCount={p.likesCount}/>);
     let onAddPost = (values) => {
         props.addPost(values.myPostText);
@@ -29,11 +31,12 @@ const MyPosts = (props) => {
     return (
         <div className={classes.postPanel}>
             <h3>My posts</h3>
-            <MyPostFormRedux onSubmit={onAddPost} />
+            <MyPostFormRedux onSubmit={onAddPost}/>
             <div className={classes.post}>
                 {postsElement}
             </div>
         </div>
     )
-}
+})
+
 export default MyPosts

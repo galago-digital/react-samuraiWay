@@ -1,27 +1,21 @@
 import React from 'react'
 import {Field, reduxForm} from "redux-form";
 import {required} from "../../utils/validators/validator";
-import Element from "../Common/FormsControl/FormControl";
+import Element, {createField} from "../Common/FormsControl/FormControl";
 import {connect} from "react-redux";
 import {login} from "../../redux/authReducer";
 import {Redirect} from "react-router-dom";
 import classes from './../Common/FormsControl/FormControl.module.css'
 
 const Input = Element("input");
-const LoginForm = (props) => {
+const LoginForm = ({handleSubmit, error}) => {
     return (
-            <form onSubmit={props.handleSubmit}>
-                <div>
-                    <Field placeholder={"Email"} name={'email'} component={Input} validate ={[required]}/>
-                </div>
-                <div>
-                    <Field placeholder={"Password"} name={'password'} type={'password'} component={Input} validate ={[required]}/>
-                </div>
-                <div>
-                    <Field type={"checkbox"} name={'rememberMe'} component={Input} /> Remember me
-                </div>
-                {props.error && <div className={classes.formSumError}>
-                    {props.error}
+            <form onSubmit={handleSubmit}>
+                {createField(Input, 'email', "Email",[required] )}
+                {createField(Input, 'password', "Password",[required], {type: 'password'} )}
+                {createField(Input, 'rememberMe', null,[], {type: 'checkbox'}, "Remember me" )}
+                {error && <div className={classes.formSumError}>
+                    {error}
                 </div>}
                 <div>
                     <button>Login</button>

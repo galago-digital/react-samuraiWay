@@ -1,10 +1,6 @@
-import Preloader from "../../Common/Preloader/Preloader";
-import classes from "./ProfileInfo.module.css";
 import React from "react";
 
 class ProfileStatus extends React.Component{
-
-
     state = {
         editMode: false,
         status: this.props.status

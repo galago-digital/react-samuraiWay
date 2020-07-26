@@ -84,8 +84,6 @@ export const requestUsers = (page, pageSize) => async (dispatch) => {
     dispatch(setUsers(data.items))
     dispatch(setTotalUsersCount(data.totalCount))
 }
-
-
 export const follow = (id) => async (dispatch) => {
     dispatch(toggleFollowingProgress(true, id))
     let data = await usersAPI.follow(id)

@@ -17,6 +17,7 @@ const appReduser = (state = initialState, action) => {
             return state
     }
 }
+
 export const initializedSuccess = () => ({type: INITIALIZED_SUCCESS});
 
 export const initializeApp = () => {

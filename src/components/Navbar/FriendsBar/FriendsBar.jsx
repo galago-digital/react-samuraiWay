@@ -3,9 +3,8 @@ import classes from './../Navbar.module.css';
 import FriendsBarItem from "./FriendsBarItem/FriendsBarItem";
 
 const FriendsBar = (props) => {
-    let state = props.sidebar;
-    let friendData = state.friend
-        .map(i => <FriendsBarItem img={i.ava} key={i.id} name={i.name}/>)
+    let friendData = props.sidebar.friend
+        .map(i => <FriendsBarItem key={i.id} img={i.ava}  name={i.name}/>)
     return (
         <div className={`${classes.item} ${classes.friends}`}>
             Friends:

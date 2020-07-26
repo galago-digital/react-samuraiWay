@@ -1,9 +1,11 @@
 import {profileAPI} from "../api/api";
+import {stopSubmit} from "redux-form";
 
 const ADD_POST = 'profile/ADD-POST';
 const SET_USER_PROFILE = 'profile/SET-USER-PROFILE'
 const SET_STATUS = 'profile/SET_STATUS'
 const DELETE_POST = 'profile/DELETE_POST'
+const SAVE_PHOTO_SUCCESS = 'profile/SAVE_PHOTO_SUCCESS'
 
 let profileInitialState = {
     posts: [
@@ -46,14 +48,22 @@ const profileReducer = (state = profileInitialState, action) => {
                 posts: state.posts.filter(p => p.id !== action.postID)
             }
         }
+        case SAVE_PHOTO_SUCCESS: {
+            return {
+                ...state,
+                profile: {...state.profile, photos: action.photos}
+            }
+        }
         default :
             return state;
     }
 }
+
 export const addPostActionCreator = (myPostText) => ({type: ADD_POST, myPostText});
 export const setUserProfileData = (profile) => ({type: SET_USER_PROFILE, profile});
 export const setStatus = (status) => ({type: SET_STATUS, status});
 export const deletePost = (postID) => ({type: DELETE_POST, postID});
+export const savePhotoSuccess = (photos) => ({type: SAVE_PHOTO_SUCCESS, photos});
 
 export const setUserProfile = (userId) => async (dispatch) => {
     let data = await profileAPI.profileData(userId)
@@ -63,11 +73,25 @@ export const getStatus = (userId) => async (dispatch) => {
     let data = await profileAPI.getStatus(userId)
     dispatch(setStatus(data))
 }
-
 export const updateStatus = (status) => async (dispatch) => {
     let data = await profileAPI.updateStatus(status)
     if (data.resultCode === 0) {
         dispatch(setStatus(status))
+    }
+}
+export const savePhoto = (file) => async (dispatch) => {
+    let data = await profileAPI.savePhoto(file)
+    if (data.resultCode === 0) {
+        dispatch(savePhotoSuccess(data.data.photos))
+    }
+}
+export const saveProfile = (profile) => async (dispatch, getState) => {
+    const userId = getState().auth.userId
+    let data = await profileAPI.saveProfile(profile)
+    if (data.resultCode === 0) {
+        dispatch(setUserProfile(userId))
+    }else{
+        dispatch(stopSubmit('editProfile', {_error: data.messages[0]}))
     }
 }
 export default profileReducer;

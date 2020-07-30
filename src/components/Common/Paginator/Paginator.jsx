@@ -10,7 +10,7 @@ let Paginator = (props) => {
         <div>
             {pages.map(p => {
                     return (
-                        <span className={props.currentPage === p && classes.selectPage}
+                        <span key={p.toString()} className={props.currentPage === p ? classes.selectPage : null}
                               onClick={(e) => {
                                   props.onPageChanged(p);
                               }}>{p}</span>

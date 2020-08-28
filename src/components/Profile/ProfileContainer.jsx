@@ -15,6 +15,8 @@ class ProfileContainer extends React.Component {
             }
         }
         this.props.setUserProfile(userId)
+        // при вызове для неавторизованного пользователся естественно валитсья с ошибкой
+        // т.к. вместо ожидаемого id в url уходит undefined
         this.props.getStatus(userId)
     }
     componentDidMount() {
